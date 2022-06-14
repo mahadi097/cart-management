@@ -9,9 +9,9 @@ export class CartService {
   cartProductsChanged = new EventEmitter<any>();
   cartProductsUpdated = new EventEmitter<any>();
 
-  // getCarts() {
-  //   return this.carts.slice();
-  // }
+  getCarts() {
+    return this.cartProducts.slice();
+  }
 
   addProductToCart(product) {
     let alreadyInCart = false;
