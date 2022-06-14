@@ -1,0 +1,38 @@
+<ng-container *ngIf="cartProduct.cartQuantity !== 0">
+  <div class="cart cart-{{ cartProduct.id }}">
+    <img [src]="cartProduct.imgPath" alt="" class="cart-img" />
+
+    <div class="name-price">
+      <h3 class="name">{{ cartProduct.model }}</h3>
+      <p class="price">{{ cartProduct.priceDisplay }}</p>
+    </div>
+
+    <ul class="detail">
+      <li>Processor: {{ cartProduct.detail.processor }}</li>
+      <li>Memory: {{ cartProduct.detail.memory }}</li>
+      <li>Storage: {{ cartProduct.detail.storage }}</li>
+      <li>Graphics: {{ cartProduct.detail.graphics }}</li>
+    </ul>
+
+    <div class="change-quantity-btns">
+      <button
+        class="cart-btn-minus"
+        mat-raised-button
+        (click)="decreaseCartItem()"
+      >
+        -
+      </button>
+      <button
+        class="cart-btn-plus"
+        mat-raised-button
+        (click)="increaseCartItem()"
+      >
+        +
+      </button>
+    </div>
+
+    <div class="cart-product-quantity">
+      {{ cartProduct.cartQuantity }}
+    </div>
+  </div>
+</ng-container>

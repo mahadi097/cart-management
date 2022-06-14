@@ -1,0 +1,45 @@
+<div class="product product-{{ product.id }}">
+  <img [src]="product.imgPath" alt="" class="product-img" />
+
+  <div class="name-price">
+    <h3 class="name">{{ product.model }}</h3>
+    <p class="price">{{ product.priceDisplay }}</p>
+  </div>
+
+  <ul class="detail">
+    <li>Processor: {{ product.detail.processor }}</li>
+    <li>Memory: {{ product.detail.memory }}</li>
+    <li>Storage: {{ product.detail.storage }}</li>
+    <li>Graphics: {{ product.detail.graphics }}</li>
+  </ul>
+
+  <div *ngIf="product.quantity === product.quantityInitial">
+    <button class="cart-btn" mat-raised-button (click)="addToCartService()">
+      Add to Cart
+    </button>
+  </div>
+
+  <div
+    *ngIf="product.quantity !== product.quantityInitial"
+    class="change-quantity-btns"
+  >
+    <button
+      class="cart-btn-minus"
+      mat-raised-button
+      (click)="decreaseCartItem()"
+    >
+      -
+    </button>
+    <button
+      class="cart-btn-plus"
+      mat-raised-button
+      (click)="addToCartService()"
+    >
+      +
+    </button>
+  </div>
+
+  <div class="product-quantity">
+    {{ product.quantity }}
+  </div>
+</div>

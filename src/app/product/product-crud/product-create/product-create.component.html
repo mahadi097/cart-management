@@ -1,0 +1,48 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <mat-form-field>
+    <mat-label>Model ID</mat-label>
+    <input matInput ngModel name="id" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Model Name</mat-label>
+    <input matInput ngModel name="model" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput ngModel name="price" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Quantity</mat-label>
+    <input matInput ngModel name="quantity" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Image Link</mat-label>
+    <input matInput ngModel name="imgPath" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Processor</mat-label>
+    <input matInput ngModel name="processor" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Memory</mat-label>
+    <input matInput ngModel name="memory" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Storage</mat-label>
+    <input matInput ngModel name="storage" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Graphics</mat-label>
+    <input matInput ngModel name="graphics" />
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>

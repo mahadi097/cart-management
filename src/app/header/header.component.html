@@ -1,0 +1,38 @@
+<nav>
+  <!-- <input type="checkbox" id="check" /> -->
+  <!-- <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+  </label> -->
+  <div class="nav-link">
+    <!-- <label class="logo">Gaming Laptop</label> -->
+    <ul>
+      <li
+        role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a routerLink="/">Home</a>
+      </li>
+      <li role="presentation" routerLinkActive="active">
+        <a routerLink="/product-list">Product List</a>
+      </li>
+      <li role="presentation" routerLinkActive="active">
+        <a routerLink="/shopping-list">Shopping List</a>
+      </li>
+    </ul>
+
+    <!-- <button mat-button>Material</button> -->
+  </div>
+  <app-cart-dropdown-menu></app-cart-dropdown-menu>
+  <!-- <div class="cart-link"> -->
+  <!-- <img
+    src="../assets/images/cart-outline.svg"
+    alt="cart"
+    class="cart-img show-cart"
+  /> -->
+  <div class="total-cart">
+    {{ totalCart }}
+    <!-- <p class="">0</p> -->
+  </div>
+  <!-- </div> -->
+</nav>

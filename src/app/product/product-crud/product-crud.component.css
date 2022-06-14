@@ -1,0 +1,21 @@
+table {
+  width: 70%;
+  margin: auto;
+}
+
+.header {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+
+.add-new-product {
+  height: 50px;
+  background-color: #40c057;
+  color: #f8f9fa;
+}
+
+mat-icon {
+  cursor: pointer;
+}

@@ -1,0 +1,63 @@
+<!-- <button mat-button>Material Button</button> -->
+
+<!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu> -->
+<!-- <p>asds</p> -->
+<div id="cart-menu">
+  <div mat-button [matMenuTriggerFor]="menu" xPosition="before">
+    <img class="cart-icon cart-img" src="../assets/images/cart-outline.svg" />
+  </div>
+  <mat-menu #menu="matMenu" class="cart-menu-mat">
+    <div class="cart-dropdown-container" (click)="$event.stopPropagation()">
+      <div class="cart-dropdown-header">
+        <div class="total-cart">
+          <mat-icon class="cart-icon-mat">shopping_cart</mat-icon>
+          <p class="total-cart-number">{{ totalCart }}</p>
+        </div>
+        <div>
+          <p>
+            <span class="total-price-text">Total Price:</span>
+            <span class="total-price-number">{{
+              totalPrice.toLocaleString() + "৳"
+            }}</span>
+          </p>
+        </div>
+      </div>
+
+      <div
+        *ngFor="let cartProduct of cartProducts; let i = index"
+        class="cart-dropdown-item"
+      >
+        <div>
+          <img [src]="cartProduct.imgPath" alt="" class="cartProduct-img" />
+        </div>
+
+        <div class="cartProduct-content">
+          <span class="content-block">{{ cartProduct.model }}</span>
+          <span class="content-block">
+            {{ cartProduct.priceDisplay }} * {{ cartProduct.cartQuantity }} =
+            {{
+              (cartProduct.price * cartProduct.cartQuantity).toLocaleString()
+            }}৳
+          </span>
+          <div>
+            <button
+              class="btn-minus"
+              (click)="decreaseCartItem(cartProduct, i)"
+            >
+              -
+            </button>
+            <span class="cart-quantity">{{ cartProduct.cartQuantity }}</span>
+            <button class="btn-plus" (click)="increaseCartItem(cartProduct)">
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <button mat-menu-item>Item 2</button> -->
+  </mat-menu>
+</div>
